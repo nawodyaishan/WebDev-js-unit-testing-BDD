@@ -9,12 +9,11 @@ function checkForShip(player, coordinates) {
                 && (actualCoordinates[1] === coordinates[1]);
         })[0];
 
-        if (!shipPresent) {
-            return false;
-        } else {
+        if (shipPresent) {
             return true;
         }
     }
+    return false;
 }
 
 module.exports.checkForShip = checkForShip;
