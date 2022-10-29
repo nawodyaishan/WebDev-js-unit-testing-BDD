@@ -79,6 +79,14 @@ describe(`Fire Function `, function () {
         }
     )
 
+    after(function () {
+        console.log(`Entire Test Case has been completed`);
+    });
+
+    afterEach(function () {
+        console.log(`One Unit test Completed!`);
+    });
+
     it('should record damage on the given player ship at given coordinate', function () {
 
         fire(player, [0, 1]);
