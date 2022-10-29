@@ -1,5 +1,4 @@
-const {placeShip} = require("../game_logic/player_methods");
-var expect = require(`chai`).expect;
+const expect = require('chai').expect;
 
 describe(`PLAYER METHODS`, function () {
     describe(`validate Location`, function () {
@@ -71,8 +70,8 @@ describe(`PLAYER METHODS`, function () {
     })
 
     describe(`Place Ship Function`, function () {
-        var validateLocations = require(`../game_logic/player_methods`).placeShip();
-        var player;
+        const placeShip = require('../game_logic/player_methods.js').placeShip;
+        let player;
 
         beforeEach(function () {
             player = {
@@ -100,6 +99,17 @@ describe(`PLAYER METHODS`, function () {
             expect(actual).to.be.ok;
             expect(actual).to.have.length(1);
             expect(actual[0]).to.deep.eq([0, 1])
+        });
+
+        it('should throw an error if no direction is specified ', function () {
+            let ship = player.ships[0];
+            let coordinates = [0, 1];
+
+            let handler = () => {
+                placeShip(player, ship, coordinates);
+            };
+            expect(handler).to.throw(Error);
+            expect(handler).to.throw('You left out the direction! I need that for math!');
         });
     })
 })
