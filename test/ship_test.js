@@ -59,7 +59,21 @@ describe(`checkForShip`, function () {
         };
 
         expect(checkForShip(player, [0, 1], [0, 1], [0, 3])).to.be.true;
-        expect(checkForShip(player, [0, 2], [0, 1], [0, 3])).to.be.false;
         expect(checkForShip(player, [4, 0], [0, 1], [0, 3])).to.be.false;
+    });
+});
+
+describe(`damage ship`, function () {
+    var damageShip = require(`../game_logic/ship_methods`).damageShip;
+
+    it('should register the damage on a given ship at a location', function () {
+
+        var ship = {
+            locations: [[0, 0]],
+            damage: []
+        }
+
+        damageShip(ship, [0, 0]).to.not.be.empty;
+
     });
 })
