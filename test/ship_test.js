@@ -73,7 +73,9 @@ describe(`damage ship`, function () {
             damage: []
         }
 
-        damageShip(ship, [0, 0]).to.not.be.empty;
+        damageShip(ship, [0, 0]);
+        expect(ship.damage).to.not.be.empty;
+        expect(ship.damage[0]).to.deep.eq([0, 0]);
 
     });
 })
