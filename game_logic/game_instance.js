@@ -1,12 +1,12 @@
-const fire = require('./ship_methods').fire;
+const fire = require('./ship_methods').fireShip;
 
 function checkGameStatus(players) {
     return false;
 }
 
-function takeTurn(opossingPlayer, guessFunction) {
+function takeTurn(opposingPlayer, guessFunction) {
     let coordinate = guessFunction();
-    fire(opossingPlayer, coordinate);
+    fire(opposingPlayer, coordinate);
     let gameOver = checkGameStatus();
 
     return gameOver;
