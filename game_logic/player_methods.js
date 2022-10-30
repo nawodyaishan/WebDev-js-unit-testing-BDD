@@ -47,6 +47,25 @@ function placeShip(player, ship, startingCoordinates, direction) {
     }
 }
 
+function getRandomCoordinate() {
+    let x = Math.floor(Math.random() * 9);
+    let y = Math.floor(Math.random() * 9);
+    return [x, y];
+}
+
+function getRandomDirection() {
+    let direction = Math.random() > 0.5
+        ? 'horizontal'
+        : 'vertical';
+}
+
+// function computerFire (player) {
+//   fire(player, getRandomCoordinate());
+// }
+// function computerPlaceShip (player, ship) {
+//   placeShip(player, ship, getRandomCoordinate(), getRandomDirection());
+// }
+
 module.exports.validateLocation = validateLocation;
 module.exports.validateLocations = validateLocations;
 module.exports.placeShip = placeShip;
